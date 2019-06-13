@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, RadioButtonGroupDelegate {
+class ViewController: UIViewController, RadioButtonGroupDelegate, SendCountryNameDelegate {
     
     
     @IBOutlet weak var standardBtn: IKRadioButton!
     @IBOutlet weak var superBtn: IKRadioButton!
     @IBOutlet weak var reduceBtn: IKRadioButton!
+    @IBOutlet weak var dropDownMenu: WrapperView!
     
     var isButtonClicked: Bool = false
     
@@ -22,10 +23,12 @@ class ViewController: UIViewController, RadioButtonGroupDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setUpDummyData()
         radioButtonGroup = IKRadioButtonGroup()
         radioButtonGroup.delegate = self
         radioButtonGroup.appendToRadioGroup(radioButtons: [standardBtn,superBtn, reduceBtn])
+        
+        WrapperView.delegate = self
         
         switch UserDefaults.standard.integer(forKey: "ButtonTag") {
         case 1:
@@ -48,6 +51,16 @@ class ViewController: UIViewController, RadioButtonGroupDelegate {
         }
         UserDefaults.standard.set(button.tag, forKey: "ButtonTag")
         
+    }
+    
+    func setUpDummyData() {
+        let option =  Options()
+        dropDownMenu.optionArray = option.countries
+        dropDownMenu.optionIds = option.ids
+    }
+    
+    func showCountryName(name: String) {
+        print("Selected Country is: \(name)")
     }
 
 
