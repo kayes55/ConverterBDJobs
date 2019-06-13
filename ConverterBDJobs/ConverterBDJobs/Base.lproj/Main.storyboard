@@ -18,20 +18,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="897-MT-2En">
-                                <rect key="frame" x="130.5" y="429.5" width="153.5" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vat Rates:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsM-7P-brv">
+                                <rect key="frame" x="20" y="268" width="374" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TP1-ON-Rlb" customClass="IKRadioButton" customModule="ConverterBDJobs" customModuleProvider="target">
+                                <rect key="frame" x="20" y="303" width="374" height="30"/>
+                                <state key="normal" title="standard (21.0%)">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="standard (21.0%)"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonTitleColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="radioButtoncolor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OzG-l9-rcX" customClass="IKRadioButton" customModule="ConverterBDJobs" customModuleProvider="target">
+                                <rect key="frame" x="20" y="341" width="374" height="30"/>
+                                <state key="normal" title="super_reduced (4.0%)">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="super_reduced (4.0%)"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="radioButtoncolor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonTitleColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inK-zW-Ed3" customClass="IKRadioButton" customModule="ConverterBDJobs" customModuleProvider="target">
+                                <rect key="frame" x="20" y="379" width="374" height="30"/>
+                                <state key="normal" title="reduced (10%)">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTitle" value="reduced (10%)"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="radioButtoncolor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonTitleColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="897-MT-2En" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8up-um-cIU"/>
-                            <constraint firstItem="897-MT-2En" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kh4-4e-whi"/>
+                            <constraint firstItem="OzG-l9-rcX" firstAttribute="width" secondItem="TP1-ON-Rlb" secondAttribute="width" id="6yc-32-quV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="inK-zW-Ed3" secondAttribute="trailing" symbolic="YES" id="80s-r2-hwA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QsM-7P-brv" secondAttribute="trailing" constant="20" id="9sb-Q8-2Bd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OzG-l9-rcX" secondAttribute="trailing" symbolic="YES" id="D8d-8x-mbw"/>
+                            <constraint firstItem="TP1-ON-Rlb" firstAttribute="top" secondItem="QsM-7P-brv" secondAttribute="bottom" constant="8" id="EX7-gv-hlc"/>
+                            <constraint firstItem="QsM-7P-brv" firstAttribute="leading" secondItem="OzG-l9-rcX" secondAttribute="leading" id="FRY-JR-y3C"/>
+                            <constraint firstItem="QsM-7P-brv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KwF-kP-dtS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TP1-ON-Rlb" secondAttribute="trailing" symbolic="YES" id="Xvl-4d-aao"/>
+                            <constraint firstItem="QsM-7P-brv" firstAttribute="leading" secondItem="inK-zW-Ed3" secondAttribute="leading" id="YtO-EZ-TRI"/>
+                            <constraint firstItem="TP1-ON-Rlb" firstAttribute="top" secondItem="QsM-7P-brv" secondAttribute="bottom" constant="8" symbolic="YES" id="hqL-7F-jMN"/>
+                            <constraint firstItem="OzG-l9-rcX" firstAttribute="top" secondItem="TP1-ON-Rlb" secondAttribute="bottom" constant="8" id="hsH-By-rva"/>
+                            <constraint firstItem="QsM-7P-brv" firstAttribute="leading" secondItem="TP1-ON-Rlb" secondAttribute="leading" id="lFw-Aq-R3K"/>
+                            <constraint firstItem="QsM-7P-brv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lgZ-Oc-FAI"/>
+                            <constraint firstItem="inK-zW-Ed3" firstAttribute="top" secondItem="OzG-l9-rcX" secondAttribute="bottom" constant="8" id="pSG-ZQ-47n"/>
+                            <constraint firstItem="QsM-7P-brv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="224" id="rmh-f2-L2p"/>
+                            <constraint firstItem="inK-zW-Ed3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tOw-h3-Zb9"/>
+                            <constraint firstItem="TP1-ON-Rlb" firstAttribute="width" secondItem="QsM-7P-brv" secondAttribute="width" id="vaO-h8-gsY"/>
+                            <constraint firstItem="TP1-ON-Rlb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="x4e-dz-9sk"/>
+                            <constraint firstItem="inK-zW-Ed3" firstAttribute="width" secondItem="OzG-l9-rcX" secondAttribute="width" id="xC8-t5-Hzp"/>
+                            <constraint firstItem="OzG-l9-rcX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="z4p-UD-aaw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="reduceBtn" destination="inK-zW-Ed3" id="wMe-Fj-bAJ"/>
+                        <outlet property="standardBtn" destination="TP1-ON-Rlb" id="kwk-zk-rsg"/>
+                        <outlet property="superBtn" destination="OzG-l9-rcX" id="Dwo-kv-86c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

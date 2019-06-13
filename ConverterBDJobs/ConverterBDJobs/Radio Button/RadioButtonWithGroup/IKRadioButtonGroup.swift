@@ -1,26 +1,21 @@
 //
-//  RadioButtonGroup.swift
-//  RadioButton
-//
-//  Created by Venkatesh P1 on 9/13/17.
-//  Copyright © 2017 Venkatesh P1. All rights reserved.
-//
+
 
 import Foundation
 import UIKit
 protocol RadioButtonGroupDelegate {
-    func radioButtonClicked(button: PVRadioButton)
+    func radioButtonClicked(button: IKRadioButton)
 }
-class PVRadioButtonGroup {
+class IKRadioButtonGroup {
     var delegate: RadioButtonGroupDelegate?
-    var radioButtonsGroup = [String:[PVRadioButton]]()
+    var radioButtonsGroup = [String:[IKRadioButton]]()
         
-    func appendToRadioGroup(radioButtons: [PVRadioButton]) {
+    func appendToRadioGroup(radioButtons: [IKRadioButton]) {
         let totalGroups = radioButtonsGroup.keys.count
         let newGroupName = "group_\(totalGroups)"
-        var buttonsInGroup = [PVRadioButton]()
+        var buttonsInGroup = [IKRadioButton]()
         for button in radioButtons {
-            button.addTarget(self, action: #selector(PVRadioButtonGroup.updateButtons(button:)), for:UIControl.Event.touchUpInside)
+            button.addTarget(self, action: #selector(IKRadioButtonGroup.updateButtons(button:)), for:UIControl.Event.touchUpInside)
             button.radioGroupName = newGroupName
             buttonsInGroup.append(button)
         }
@@ -28,7 +23,7 @@ class PVRadioButtonGroup {
         radioButtonsGroup[newGroupName] = buttonsInGroup
     }
     
-    @objc func updateButtons(button:PVRadioButton) {
+    @objc func updateButtons(button:IKRadioButton) {
         if let radioGroup = radioButtonsGroup[button.radioGroupName] {
             for lbutton in radioGroup {
                 if lbutton != button {
