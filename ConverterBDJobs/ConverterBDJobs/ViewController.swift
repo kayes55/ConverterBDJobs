@@ -24,11 +24,11 @@ class ViewController: UIViewController, RadioButtonGroupDelegate {
         radioButtonGroup = IKRadioButtonGroup()
         radioButtonGroup.delegate = self
         radioButtonGroup.appendToRadioGroup(radioButtons: [standardBtn,superBtn, reduceBtn])
-        
+                
     }
     
     func radioButtonClicked(button: IKRadioButton) {
-        print(button.titleLabel?.text ?? "")
+        print(button.tag)
     }
 
 
