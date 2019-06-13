@@ -12,7 +12,7 @@ protocol SendCountryNameDelegate: class {
     func showCountryName(name: String)
 }
 
-class WrapperView: UIView, UITextFieldDelegate {
+class WrapperView: UIView {
     
     public static var delegate: SendCountryNameDelegate?
     
@@ -83,13 +83,6 @@ class WrapperView: UIView, UITextFieldDelegate {
             showList()
         }
         
-    }
-    
-    //MARK:- TextFieldDelegates
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if isSelected {
-            hideList()
-        }
     }
 }
 

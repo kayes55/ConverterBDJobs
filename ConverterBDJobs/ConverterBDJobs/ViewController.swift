@@ -56,7 +56,7 @@ class ViewController: UIViewController, RadioButtonGroupDelegate, SendCountryNam
     func setUpDummyData() {
         let option =  Options()
         dropDownMenu.optionArray = option.countries
-        dropDownMenu.optionIds = option.ids
+//        dropDownMenu.optionIds = option.ids
     }
     
     func showCountryName(name: String) {
