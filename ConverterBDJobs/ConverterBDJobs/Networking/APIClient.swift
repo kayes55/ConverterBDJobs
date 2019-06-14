@@ -55,11 +55,12 @@ class APIClient {
     
     
     class func getWatchlist(completion: @escaping ([Rate], Error?) -> Void) {
-        taskForGETRequest(url: Endpoints.getWatchlist.url, responseType: Tax.self) { response, error in
-            if error == nil {
-                completion(response!.rates, nil)
+        _ = taskForGETRequest(url: Endpoints.getWatchlist.url, responseType: Tax.self) { response, error in
+            
+            if let response = response {
+                completion(response.rates, nil)
             } else {
-                print(error)
+                completion([], error)
             }
         }
     }
