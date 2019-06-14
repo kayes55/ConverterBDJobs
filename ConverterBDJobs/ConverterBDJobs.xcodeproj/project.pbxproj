@@ -16,6 +16,8 @@
 		E55058CB22B303F0005E616F /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058CA22B303F0005E616F /* DummyData.swift */; };
 		E55058CE22B30D52005E616F /* IKPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058CD22B30D52005E616F /* IKPlaceholder.swift */; };
 		E55058D122B321C8005E616F /* TaxCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058D022B321C8005E616F /* TaxCalculator.swift */; };
+		E55058D622B333FC005E616F /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058D522B333FC005E616F /* Tax.swift */; };
+		E57557E322B41F2600A44A77 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57557E222B41F2600A44A77 /* APIClient.swift */; };
 		E5D8C6CE22B2AC450027EE83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D8C6CD22B2AC450027EE83 /* AppDelegate.swift */; };
 		E5D8C6D022B2AC450027EE83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D8C6CF22B2AC450027EE83 /* ViewController.swift */; };
 		E5D8C6D322B2AC450027EE83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D8C6D122B2AC450027EE83 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 		E55058CA22B303F0005E616F /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		E55058CD22B30D52005E616F /* IKPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKPlaceholder.swift; sourceTree = "<group>"; };
 		E55058D022B321C8005E616F /* TaxCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxCalculator.swift; sourceTree = "<group>"; };
+		E55058D522B333FC005E616F /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
+		E57557E222B41F2600A44A77 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		E5D8C6CA22B2AC450027EE83 /* ConverterBDJobs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConverterBDJobs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D8C6CD22B2AC450027EE83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5D8C6CF22B2AC450027EE83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,12 +121,28 @@
 			path = IKPlaceholder;
 			sourceTree = "<group>";
 		};
-		E55058CF22B3219B005E616F /* Model */ = {
+		E55058CF22B3219B005E616F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				E55058D022B321C8005E616F /* TaxCalculator.swift */,
 			);
-			path = Model;
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E55058D222B33395005E616F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E55058D522B333FC005E616F /* Tax.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E57557E122B41E8900A44A77 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E57557E222B41F2600A44A77 /* APIClient.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		E5D8C6C122B2AC450027EE83 = {
@@ -146,7 +166,9 @@
 		E5D8C6CC22B2AC450027EE83 /* ConverterBDJobs */ = {
 			isa = PBXGroup;
 			children = (
-				E55058CF22B3219B005E616F /* Model */,
+				E57557E122B41E8900A44A77 /* Networking */,
+				E55058D222B33395005E616F /* Models */,
+				E55058CF22B3219B005E616F /* Utilities */,
 				E55058CC22B30D33005E616F /* IKPlaceholder */,
 				E55058C522B2FF80005E616F /* DropDownMenu */,
 				E530197722B2D53900798244 /* Radio Button */,
@@ -285,11 +307,13 @@
 				E5D8C6D022B2AC450027EE83 /* ViewController.swift in Sources */,
 				E530197C22B2D6E600798244 /* IKRadioButtonGroup.swift in Sources */,
 				E530197922B2D68100798244 /* IKRadioButton.swift in Sources */,
+				E55058D622B333FC005E616F /* Tax.swift in Sources */,
 				E55058D122B321C8005E616F /* TaxCalculator.swift in Sources */,
 				E5D8C6CE22B2AC450027EE83 /* AppDelegate.swift in Sources */,
 				E55058C722B2FF9F005E616F /* Arrow.swift in Sources */,
 				E55058CE22B30D52005E616F /* IKPlaceholder.swift in Sources */,
 				E55058C922B3004A005E616F /* WrapperView.swift in Sources */,
+				E57557E322B41F2600A44A77 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

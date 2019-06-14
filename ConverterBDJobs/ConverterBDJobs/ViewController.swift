@@ -25,6 +25,7 @@ class ViewController: UIViewController, RadioButtonGroupDelegate, SendCountryNam
     @IBOutlet weak var totalAmount: UILabel!
     
     var isButtonClicked: Bool = false
+    var isCountrySelected: Bool = false
     
     var radioButtonGroup: IKRadioButtonGroup!
     
@@ -32,7 +33,18 @@ class ViewController: UIViewController, RadioButtonGroupDelegate, SendCountryNam
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        _ = APIClient.getWatchlist(completion: { (period, err) in
+            for i in 0..<period.count {
+                print(period[i].name!)
+                print(period[i].code!)
+                print(period[i].countryCode!)
+                for j in 0..<period[i].periods.count {
+                    print(period[i].periods[j].rates.standard)
+                }
+            }
+        })
         
+//        jsonParse()
         setUpDummyData()
         radioButtonGroup = IKRadioButtonGroup()
         radioButtonGroup.delegate = self
@@ -89,11 +101,39 @@ class ViewController: UIViewController, RadioButtonGroupDelegate, SendCountryNam
     
     func showCountryName(name: String) {
         print("Selected Country is: \(name)")
+        self.isCountrySelected = true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         print("End Editing")
         self.originalAmount.text = textField.text
+    }
+    
+    func jsonParse() {
+        let url = "https://jsonvat.com/"
+        URLSession.shared.dataTask(with: URL(string: url)!) { (data, res, err) in
+            
+            if let d = data {
+                if let value = String(data: d, encoding: String.Encoding.ascii) {
+                    
+                    if let jsonData = value.data(using: String.Encoding.utf8) {
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as! [String: Any]
+                            
+                            if let arr = json["rows"] as? [[String: Any]] {
+                                debugPrint(arr)
+                            }
+                            
+                            print(json)
+                            
+                        } catch {
+                            NSLog("ERROR \(error.localizedDescription)")
+                        }
+                    }
+                }
+                
+            }
+            }.resume()
     }
 
     
