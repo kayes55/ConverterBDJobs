@@ -13,7 +13,6 @@
 		E530197F22B2D72200798244 /* IKRadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530197E22B2D72200798244 /* IKRadioButtonView.swift */; };
 		E55058C722B2FF9F005E616F /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058C622B2FF9F005E616F /* Arrow.swift */; };
 		E55058C922B3004A005E616F /* WrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058C822B3004A005E616F /* WrapperView.swift */; };
-		E55058CB22B303F0005E616F /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058CA22B303F0005E616F /* DummyData.swift */; };
 		E55058CE22B30D52005E616F /* IKPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058CD22B30D52005E616F /* IKPlaceholder.swift */; };
 		E55058D122B321C8005E616F /* TaxCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058D022B321C8005E616F /* TaxCalculator.swift */; };
 		E55058D622B333FC005E616F /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058D522B333FC005E616F /* Tax.swift */; };
@@ -34,7 +33,6 @@
 		E530197E22B2D72200798244 /* IKRadioButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKRadioButtonView.swift; sourceTree = "<group>"; };
 		E55058C622B2FF9F005E616F /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		E55058C822B3004A005E616F /* WrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperView.swift; sourceTree = "<group>"; };
-		E55058CA22B303F0005E616F /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		E55058CD22B30D52005E616F /* IKPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKPlaceholder.swift; sourceTree = "<group>"; };
 		E55058D022B321C8005E616F /* TaxCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxCalculator.swift; sourceTree = "<group>"; };
 		E55058D522B333FC005E616F /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 			children = (
 				E55058C622B2FF9F005E616F /* Arrow.swift */,
 				E55058C822B3004A005E616F /* WrapperView.swift */,
-				E55058CA22B303F0005E616F /* DummyData.swift */,
 			);
 			path = DropDownMenu;
 			sourceTree = "<group>";
@@ -302,7 +299,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E55058CB22B303F0005E616F /* DummyData.swift in Sources */,
 				E530197F22B2D72200798244 /* IKRadioButtonView.swift in Sources */,
 				E5D8C6D022B2AC450027EE83 /* ViewController.swift in Sources */,
 				E530197C22B2D6E600798244 /* IKRadioButtonGroup.swift in Sources */,

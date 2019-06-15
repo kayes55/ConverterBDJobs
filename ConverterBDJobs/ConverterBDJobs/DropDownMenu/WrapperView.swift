@@ -42,9 +42,9 @@ class WrapperView: UIView {
     
     //Variables
     fileprivate  var tableheightX: CGFloat = 100
-    fileprivate  var dataArray = [String]()
+    fileprivate  var dataArray = [Rate]()
     fileprivate  var imageArray = [String]()
-    public var optionArray = [String]() {
+    public var optionArray = [Rate]() {
         didSet{
             self.dataArray = self.optionArray
         }
@@ -238,7 +238,7 @@ extension WrapperView: UITableViewDelegate, UITableViewDataSource {
         if self.imageArray.count > indexPath.row {
             cell!.imageView!.image = UIImage(named: imageArray[indexPath.row])
         }
-        cell!.textLabel!.text = "\(dataArray[indexPath.row])"
+        cell!.textLabel!.text = "\(dataArray[indexPath.row].name ?? "")"
         cell!.accessoryType = indexPath.row == selectedIndex ? .checkmark : .none
         cell!.selectionStyle = .none
         return cell!
@@ -254,19 +254,19 @@ extension WrapperView: UITableViewDelegate, UITableViewDataSource {
                         tableView.cellForRow(at: indexPath)?.backgroundColor = self.selectedRowColor
         } ,
                        completion: { (didFinish) -> Void in
-                        self.countryName.text = "\(selectedText)"
-                        WrapperView.delegate?.showCountryName(name: selectedText)
+                        self.countryName.text = "\(selectedText.name ?? "")"
+                        WrapperView.delegate?.showCountryName(name: selectedText.name ?? "")
                         
                         tableView.reloadData()
         })
         if hideOptionsWhenSelect {
             tapAction()
         }
-        if let selected = optionArray.firstIndex(where: {$0 == selectedText}) {
+        if let selected = optionArray.firstIndex(where: {$0.name == selectedText.name}) {
             if let id = optionIds?[selected] {
-                didSelectCompletion(selectedText, selected , id )
+                didSelectCompletion(selectedText.name ?? "", selected , id )
             }else{
-                didSelectCompletion(selectedText, selected , 0)
+                didSelectCompletion(selectedText.name ?? "", selected , 0)
             }
             
         }

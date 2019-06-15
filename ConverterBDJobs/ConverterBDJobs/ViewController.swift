@@ -29,21 +29,19 @@ class ViewController: UIViewController, RadioButtonGroupDelegate, SendCountryNam
     
     var radioButtonGroup: IKRadioButtonGroup!
     
+    var rates: [Rate] = [Rate]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         APIClient.shared.getWatchlist { (rates, error) in
-            for i in 0..<rates.count {
-                print(rates[i].name!)
-                print(rates[i].code!)
-                print(rates[i].countryCode!)
-                for j in 0..<rates[i].periods.count {
-                    print(rates[i].periods[j].rates.standard)
-                }
+            self.rates = rates
+            
+            DispatchQueue.main.async {
+                self.setUpDummyData()
             }
         }
-        setUpDummyData()
+        
         radioButtonGroup = IKRadioButtonGroup()
         radioButtonGroup.delegate = self
         radioButtonGroup.appendToRadioGroup(radioButtons: [standardBtn,superBtn, reduceBtn])
@@ -92,9 +90,7 @@ class ViewController: UIViewController, RadioButtonGroupDelegate, SendCountryNam
     }
     
     func setUpDummyData() {
-        let option =  Options()
-        dropDownMenu.optionArray = option.countries
-//        dropDownMenu.optionIds = option.ids
+        dropDownMenu.optionArray = self.rates
     }
     
     func showCountryName(name: String) {
