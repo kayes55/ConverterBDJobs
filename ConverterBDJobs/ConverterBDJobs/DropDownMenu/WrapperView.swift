@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SendCountryNameDelegate: class {
-    func showCountryName(name: String)
+    func showCountryName(name: String, selectedIndex: Int)
 }
 
 class WrapperView: UIView {
@@ -255,7 +255,7 @@ extension WrapperView: UITableViewDelegate, UITableViewDataSource {
         } ,
                        completion: { (didFinish) -> Void in
                         self.countryName.text = "\(selectedText.name ?? "")"
-                        WrapperView.delegate?.showCountryName(name: selectedText.name ?? "")
+                        WrapperView.delegate?.showCountryName(name: selectedText.name ?? "", selectedIndex: self.selectedIndex!)
                         
                         tableView.reloadData()
         })

@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, RadioButtonGroupDelegate, SendCountryNameDelegate, UITextFieldDelegate {
+class ViewController: UIViewController, SendCountryNameDelegate, UITextFieldDelegate {
+    
     
     @IBOutlet weak var currencyInputField: IKPlaceholder! {
         didSet {
@@ -16,10 +17,13 @@ class ViewController: UIViewController, RadioButtonGroupDelegate, SendCountryNam
         }
     }
     
-    @IBOutlet weak var standardBtn: IKRadioButton!
-    @IBOutlet weak var superBtn: IKRadioButton!
-    @IBOutlet weak var reduceBtn: IKRadioButton!
+
     @IBOutlet weak var dropDownMenu: WrapperView!
+    @IBOutlet weak var countryNameLbl: UILabel! {
+        didSet {
+            countryNameLbl.textColor = UIColor.black
+        }
+    }
     @IBOutlet weak var originalAmount: UILabel!
     @IBOutlet weak var taxAmount: UILabel!
     @IBOutlet weak var totalAmount: UILabel!
@@ -34,68 +38,42 @@ class ViewController: UIViewController, RadioButtonGroupDelegate, SendCountryNam
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ShowProgress.shared.showProgressHUD()
+        
         APIClient.shared.getWatchlist { (rates, error) in
             self.rates = rates
             
             DispatchQueue.main.async {
-                self.setUpDummyData()
+                self.setUpDropdownData()
             }
         }
         
-        radioButtonGroup = IKRadioButtonGroup()
-        radioButtonGroup.delegate = self
-        radioButtonGroup.appendToRadioGroup(radioButtons: [standardBtn,superBtn, reduceBtn])
+        
+//        radioButtonGroup = IKRadioButtonGroup()
+//        radioButtonGroup.delegate = self
+//        radioButtonGroup.appendToRadioGroup(radioButtons: [standardBtn,superBtn, reduceBtn])
         
         WrapperView.delegate = self
         
-        switch UserDefaults.standard.integer(forKey: "ButtonTag") {
-        case 1:
-            standardBtn.isRadioSelected = true
-            taxAmount.text = "21.0"
-        case 2:
-            superBtn.isRadioSelected = true
-            taxAmount.text = "4.0"
-        case 3:
-            reduceBtn.isRadioSelected = true
-            taxAmount.text = "10.0"
-        default:
-            print("Not Found")
-        }
-                
+        ShowProgress.shared.dismissProgressHUD()
     }
     
-    func radioButtonClicked(button: IKRadioButton) {
-        print(button.tag)
     
-        let temp = UserDefaults.standard.integer(forKey: "ButtonTag")
-        if (temp == 1 || temp == 2 || temp == 3) {
-            UserDefaults.standard.removeObject(forKey: "ButtonTag")
-        }
-        UserDefaults.standard.set(button.tag, forKey: "ButtonTag")
-        
-        switch button.tag {
-        case 1:
-            taxAmount.text = TaxCalculator.shared.tax(originalAmount: self.originalAmount.text!, rate: 1)
-            totalAmount.text = TaxCalculator.shared.calculateTotal(originalAmount: self.originalAmount.text, taxAmount: taxAmount.text)
-        case 2:
-            taxAmount.text = TaxCalculator.shared.tax(originalAmount: self.originalAmount.text!, rate: 2)
-            totalAmount.text = TaxCalculator.shared.calculateTotal(originalAmount: self.originalAmount.text, taxAmount: taxAmount.text)
-        case 3:
-            taxAmount.text = TaxCalculator.shared.tax(originalAmount: self.originalAmount.text!, rate: 3)
-            totalAmount.text = TaxCalculator.shared.calculateTotal(originalAmount: self.originalAmount.text, taxAmount: taxAmount.text)
-        default:
-            print("Garbage")
-        }
-        
-    }
-    
-    func setUpDummyData() {
+    func setUpDropdownData() {
         dropDownMenu.optionArray = self.rates
     }
     
-    func showCountryName(name: String) {
+    func showCountryName(name: String, selectedIndex: Int) {
         print("Selected Country is: \(name)")
         self.isCountrySelected = true
+        print("Selected Country's Standerd index is: \(self.rates[selectedIndex].periods[0].rates.standard)")
+        var periods = self.rates[selectedIndex].periods
+        for i in 0..<periods.count {
+            print("standerd (\(periods[i].rates.standard)%)")
+            print("super_reduced (\(periods[i].rates.superReduced)%)")
+            print("reduced (\(periods[i].rates.reduced)%)")
+        }
+        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {

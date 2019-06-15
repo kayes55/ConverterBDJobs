@@ -11,6 +11,7 @@
 		E530197922B2D68100798244 /* IKRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530197822B2D68100798244 /* IKRadioButton.swift */; };
 		E530197C22B2D6E600798244 /* IKRadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530197B22B2D6E600798244 /* IKRadioButtonGroup.swift */; };
 		E530197F22B2D72200798244 /* IKRadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530197E22B2D72200798244 /* IKRadioButtonView.swift */; };
+		E53FA18722B5889C006EE9D4 /* ShowProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53FA18622B5889C006EE9D4 /* ShowProgress.swift */; };
 		E55058C722B2FF9F005E616F /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058C622B2FF9F005E616F /* Arrow.swift */; };
 		E55058C922B3004A005E616F /* WrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058C822B3004A005E616F /* WrapperView.swift */; };
 		E55058CE22B30D52005E616F /* IKPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058CD22B30D52005E616F /* IKPlaceholder.swift */; };
@@ -31,6 +32,7 @@
 		E530197822B2D68100798244 /* IKRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKRadioButton.swift; sourceTree = "<group>"; };
 		E530197B22B2D6E600798244 /* IKRadioButtonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKRadioButtonGroup.swift; sourceTree = "<group>"; };
 		E530197E22B2D72200798244 /* IKRadioButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKRadioButtonView.swift; sourceTree = "<group>"; };
+		E53FA18622B5889C006EE9D4 /* ShowProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProgress.swift; sourceTree = "<group>"; };
 		E55058C622B2FF9F005E616F /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		E55058C822B3004A005E616F /* WrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperView.swift; sourceTree = "<group>"; };
 		E55058CD22B30D52005E616F /* IKPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKPlaceholder.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				E55058D022B321C8005E616F /* TaxCalculator.swift */,
+				E53FA18622B5889C006EE9D4 /* ShowProgress.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -280,12 +283,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ConverterBDJobs/Pods-ConverterBDJobs-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -310,6 +315,7 @@
 				E55058CE22B30D52005E616F /* IKPlaceholder.swift in Sources */,
 				E55058C922B3004A005E616F /* WrapperView.swift in Sources */,
 				E57557E322B41F2600A44A77 /* APIClient.swift in Sources */,
+				E53FA18722B5889C006EE9D4 /* ShowProgress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
