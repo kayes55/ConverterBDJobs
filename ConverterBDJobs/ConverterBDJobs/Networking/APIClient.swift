@@ -10,7 +10,11 @@ import Foundation
 
 class APIClient {
     
-    enum Endpoints {
+    public static let shared = APIClient()
+    
+    private init() {}
+    
+    private enum Endpoints {
         static let base = "https://jsonvat.com/"
         
         case getWatchlist
@@ -26,7 +30,7 @@ class APIClient {
         }
     }
     
-    class func taskForGETRequest<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionDataTask {
+    private func taskForGETRequest<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionDataTask {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
                 DispatchQueue.main.async {
@@ -54,7 +58,7 @@ class APIClient {
     }
     
     
-    class func getWatchlist(completion: @escaping ([Rate], Error?) -> Void) {
+    public func getWatchlist(completion: @escaping ([Rate], Error?) -> Void) {
         _ = taskForGETRequest(url: Endpoints.getWatchlist.url, responseType: Tax.self) { response, error in
             
             if let response = response {
