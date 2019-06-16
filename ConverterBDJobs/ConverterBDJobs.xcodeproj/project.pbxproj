@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3DC70F5DF52F1F023163C340 /* Pods_ConverterBDJobs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F4ADFBDEF603645F30EA29 /* Pods_ConverterBDJobs.framework */; };
-		E530197922B2D68100798244 /* IKRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530197822B2D68100798244 /* IKRadioButton.swift */; };
-		E530197C22B2D6E600798244 /* IKRadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530197B22B2D6E600798244 /* IKRadioButtonGroup.swift */; };
-		E530197F22B2D72200798244 /* IKRadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530197E22B2D72200798244 /* IKRadioButtonView.swift */; };
 		E53FA18722B5889C006EE9D4 /* ShowProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53FA18622B5889C006EE9D4 /* ShowProgress.swift */; };
 		E53FA18B22B5B12E006EE9D4 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53FA18922B5B12E006EE9D4 /* CustomCell.swift */; };
 		E53FA18C22B5B12E006EE9D4 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E53FA18A22B5B12E006EE9D4 /* CustomCell.xib */; };
@@ -30,9 +27,6 @@
 		28996F8DFF9614F1054AEF2D /* Pods-ConverterBDJobs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConverterBDJobs.debug.xcconfig"; path = "Target Support Files/Pods-ConverterBDJobs/Pods-ConverterBDJobs.debug.xcconfig"; sourceTree = "<group>"; };
 		B0F4ADFBDEF603645F30EA29 /* Pods_ConverterBDJobs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConverterBDJobs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7735006573F74A3B8B98172 /* Pods-ConverterBDJobs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConverterBDJobs.release.xcconfig"; path = "Target Support Files/Pods-ConverterBDJobs/Pods-ConverterBDJobs.release.xcconfig"; sourceTree = "<group>"; };
-		E530197822B2D68100798244 /* IKRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKRadioButton.swift; sourceTree = "<group>"; };
-		E530197B22B2D6E600798244 /* IKRadioButtonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKRadioButtonGroup.swift; sourceTree = "<group>"; };
-		E530197E22B2D72200798244 /* IKRadioButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKRadioButtonView.swift; sourceTree = "<group>"; };
 		E53FA18622B5889C006EE9D4 /* ShowProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProgress.swift; sourceTree = "<group>"; };
 		E53FA18922B5B12E006EE9D4 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		E53FA18A22B5B12E006EE9D4 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
@@ -77,32 +71,6 @@
 				D7735006573F74A3B8B98172 /* Pods-ConverterBDJobs.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		E530197722B2D53900798244 /* Radio Button */ = {
-			isa = PBXGroup;
-			children = (
-				E530197822B2D68100798244 /* IKRadioButton.swift */,
-				E530197D22B2D70700798244 /* RadioButtonWithScroll */,
-				E530197A22B2D6D100798244 /* RadioButtonWithGroup */,
-			);
-			path = "Radio Button";
-			sourceTree = "<group>";
-		};
-		E530197A22B2D6D100798244 /* RadioButtonWithGroup */ = {
-			isa = PBXGroup;
-			children = (
-				E530197B22B2D6E600798244 /* IKRadioButtonGroup.swift */,
-			);
-			path = RadioButtonWithGroup;
-			sourceTree = "<group>";
-		};
-		E530197D22B2D70700798244 /* RadioButtonWithScroll */ = {
-			isa = PBXGroup;
-			children = (
-				E530197E22B2D72200798244 /* IKRadioButtonView.swift */,
-			);
-			path = RadioButtonWithScroll;
 			sourceTree = "<group>";
 		};
 		E53FA18822B5B0FA006EE9D4 /* Views */ = {
@@ -174,7 +142,6 @@
 				E55058D222B33395005E616F /* Models */,
 				E55058CF22B3219B005E616F /* Utilities */,
 				E55058C522B2FF80005E616F /* DropDownMenu */,
-				E530197722B2D53900798244 /* Radio Button */,
 				E5D8C6CD22B2AC450027EE83 /* AppDelegate.swift */,
 				E5D8C6CF22B2AC450027EE83 /* ViewController.swift */,
 				E5D8C6D122B2AC450027EE83 /* Main.storyboard */,
@@ -308,11 +275,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E530197F22B2D72200798244 /* IKRadioButtonView.swift in Sources */,
 				E53FA18B22B5B12E006EE9D4 /* CustomCell.swift in Sources */,
 				E5D8C6D022B2AC450027EE83 /* ViewController.swift in Sources */,
-				E530197C22B2D6E600798244 /* IKRadioButtonGroup.swift in Sources */,
-				E530197922B2D68100798244 /* IKRadioButton.swift in Sources */,
 				E55058D622B333FC005E616F /* Tax.swift in Sources */,
 				E55058D122B321C8005E616F /* TaxCalculator.swift in Sources */,
 				E5D8C6CE22B2AC450027EE83 /* AppDelegate.swift in Sources */,

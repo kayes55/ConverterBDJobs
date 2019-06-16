@@ -130,7 +130,7 @@ class ViewController: UIViewController, SendCountryNameDelegate, UITextFieldDele
         selectedIndex = indexPath
         tableView.reloadData()
         
-        self.taxAmount.text = "\(TaxCalculator.shared.tax(originalAmount: self.originalAmount.text!, rate: Int(self.ratesCollection[indexPath.row])))"
+        self.taxAmount.text = "\(TaxCalculator.shared.tax(originalAmount: self.originalAmount.text!, rate: self.ratesCollection[indexPath.row]))"
         self.totalAmount.text = TaxCalculator.shared.calculateTotal(originalAmount: self.originalAmount.text, taxAmount: self.taxAmount.text)
     }
     
