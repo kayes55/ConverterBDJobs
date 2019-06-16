@@ -22,7 +22,7 @@ class ShowProgress {
     
     public func dismissProgressHUD() {
         DispatchQueue.main.async {
-            SVProgressHUD.dismiss()
+            SVProgressHUD.dismiss(withDelay: 1.0)
         }
     }
     

@@ -18,6 +18,7 @@
 		E55058C922B3004A005E616F /* WrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058C822B3004A005E616F /* WrapperView.swift */; };
 		E55058D122B321C8005E616F /* TaxCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058D022B321C8005E616F /* TaxCalculator.swift */; };
 		E55058D622B333FC005E616F /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058D522B333FC005E616F /* Tax.swift */; };
+		E554838522B6888900B402FA /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E554838422B6888900B402FA /* AlertManager.swift */; };
 		E57557E322B41F2600A44A77 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57557E222B41F2600A44A77 /* APIClient.swift */; };
 		E5D8C6CE22B2AC450027EE83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D8C6CD22B2AC450027EE83 /* AppDelegate.swift */; };
 		E5D8C6D022B2AC450027EE83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D8C6CF22B2AC450027EE83 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 		E55058C822B3004A005E616F /* WrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperView.swift; sourceTree = "<group>"; };
 		E55058D022B321C8005E616F /* TaxCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxCalculator.swift; sourceTree = "<group>"; };
 		E55058D522B333FC005E616F /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
+		E554838422B6888900B402FA /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		E57557E222B41F2600A44A77 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		E5D8C6CA22B2AC450027EE83 /* ConverterBDJobs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConverterBDJobs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D8C6CD22B2AC450027EE83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				E55058D022B321C8005E616F /* TaxCalculator.swift */,
 				E53FA18622B5889C006EE9D4 /* ShowProgress.swift */,
+				E554838422B6888900B402FA /* AlertManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				E53FA19022B5D8F5006EE9D4 /* Period.swift in Sources */,
 				E5D8C6D022B2AC450027EE83 /* ViewController.swift in Sources */,
 				E55058D622B333FC005E616F /* Tax.swift in Sources */,
+				E554838522B6888900B402FA /* AlertManager.swift in Sources */,
 				E53FA18E22B5D8D3006EE9D4 /* Rate.swift in Sources */,
 				E55058D122B321C8005E616F /* TaxCalculator.swift in Sources */,
 				E5D8C6CE22B2AC450027EE83 /* AppDelegate.swift in Sources */,
