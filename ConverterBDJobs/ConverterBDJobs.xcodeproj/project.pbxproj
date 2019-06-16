@@ -12,9 +12,10 @@
 		E530197C22B2D6E600798244 /* IKRadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530197B22B2D6E600798244 /* IKRadioButtonGroup.swift */; };
 		E530197F22B2D72200798244 /* IKRadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530197E22B2D72200798244 /* IKRadioButtonView.swift */; };
 		E53FA18722B5889C006EE9D4 /* ShowProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53FA18622B5889C006EE9D4 /* ShowProgress.swift */; };
+		E53FA18B22B5B12E006EE9D4 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53FA18922B5B12E006EE9D4 /* CustomCell.swift */; };
+		E53FA18C22B5B12E006EE9D4 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E53FA18A22B5B12E006EE9D4 /* CustomCell.xib */; };
 		E55058C722B2FF9F005E616F /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058C622B2FF9F005E616F /* Arrow.swift */; };
 		E55058C922B3004A005E616F /* WrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058C822B3004A005E616F /* WrapperView.swift */; };
-		E55058CE22B30D52005E616F /* IKPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058CD22B30D52005E616F /* IKPlaceholder.swift */; };
 		E55058D122B321C8005E616F /* TaxCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058D022B321C8005E616F /* TaxCalculator.swift */; };
 		E55058D622B333FC005E616F /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058D522B333FC005E616F /* Tax.swift */; };
 		E57557E322B41F2600A44A77 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57557E222B41F2600A44A77 /* APIClient.swift */; };
@@ -33,9 +34,10 @@
 		E530197B22B2D6E600798244 /* IKRadioButtonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKRadioButtonGroup.swift; sourceTree = "<group>"; };
 		E530197E22B2D72200798244 /* IKRadioButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKRadioButtonView.swift; sourceTree = "<group>"; };
 		E53FA18622B5889C006EE9D4 /* ShowProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProgress.swift; sourceTree = "<group>"; };
+		E53FA18922B5B12E006EE9D4 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		E53FA18A22B5B12E006EE9D4 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		E55058C622B2FF9F005E616F /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		E55058C822B3004A005E616F /* WrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperView.swift; sourceTree = "<group>"; };
-		E55058CD22B30D52005E616F /* IKPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKPlaceholder.swift; sourceTree = "<group>"; };
 		E55058D022B321C8005E616F /* TaxCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxCalculator.swift; sourceTree = "<group>"; };
 		E55058D522B333FC005E616F /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
 		E57557E222B41F2600A44A77 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -103,6 +105,15 @@
 			path = RadioButtonWithScroll;
 			sourceTree = "<group>";
 		};
+		E53FA18822B5B0FA006EE9D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E53FA18922B5B12E006EE9D4 /* CustomCell.swift */,
+				E53FA18A22B5B12E006EE9D4 /* CustomCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E55058C522B2FF80005E616F /* DropDownMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,14 +121,6 @@
 				E55058C822B3004A005E616F /* WrapperView.swift */,
 			);
 			path = DropDownMenu;
-			sourceTree = "<group>";
-		};
-		E55058CC22B30D33005E616F /* IKPlaceholder */ = {
-			isa = PBXGroup;
-			children = (
-				E55058CD22B30D52005E616F /* IKPlaceholder.swift */,
-			);
-			path = IKPlaceholder;
 			sourceTree = "<group>";
 		};
 		E55058CF22B3219B005E616F /* Utilities */ = {
@@ -166,10 +169,10 @@
 		E5D8C6CC22B2AC450027EE83 /* ConverterBDJobs */ = {
 			isa = PBXGroup;
 			children = (
+				E53FA18822B5B0FA006EE9D4 /* Views */,
 				E57557E122B41E8900A44A77 /* Networking */,
 				E55058D222B33395005E616F /* Models */,
 				E55058CF22B3219B005E616F /* Utilities */,
-				E55058CC22B30D33005E616F /* IKPlaceholder */,
 				E55058C522B2FF80005E616F /* DropDownMenu */,
 				E530197722B2D53900798244 /* Radio Button */,
 				E5D8C6CD22B2AC450027EE83 /* AppDelegate.swift */,
@@ -244,6 +247,7 @@
 			files = (
 				E5D8C6D822B2AC4F0027EE83 /* LaunchScreen.storyboard in Resources */,
 				E5D8C6D522B2AC4F0027EE83 /* Assets.xcassets in Resources */,
+				E53FA18C22B5B12E006EE9D4 /* CustomCell.xib in Resources */,
 				E5D8C6D322B2AC450027EE83 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E530197F22B2D72200798244 /* IKRadioButtonView.swift in Sources */,
+				E53FA18B22B5B12E006EE9D4 /* CustomCell.swift in Sources */,
 				E5D8C6D022B2AC450027EE83 /* ViewController.swift in Sources */,
 				E530197C22B2D6E600798244 /* IKRadioButtonGroup.swift in Sources */,
 				E530197922B2D68100798244 /* IKRadioButton.swift in Sources */,
@@ -312,7 +317,6 @@
 				E55058D122B321C8005E616F /* TaxCalculator.swift in Sources */,
 				E5D8C6CE22B2AC450027EE83 /* AppDelegate.swift in Sources */,
 				E55058C722B2FF9F005E616F /* Arrow.swift in Sources */,
-				E55058CE22B30D52005E616F /* IKPlaceholder.swift in Sources */,
 				E55058C922B3004A005E616F /* WrapperView.swift in Sources */,
 				E57557E322B41F2600A44A77 /* APIClient.swift in Sources */,
 				E53FA18722B5889C006EE9D4 /* ShowProgress.swift in Sources */,

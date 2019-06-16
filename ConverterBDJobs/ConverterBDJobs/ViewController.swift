@@ -8,10 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, SendCountryNameDelegate, UITextFieldDelegate {
+class ViewController: UIViewController, SendCountryNameDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
     
     
-    @IBOutlet weak var currencyInputField: IKPlaceholder! {
+    
+    
+    @IBOutlet weak var radioBtnTableView: UITableView!
+    @IBOutlet weak var currencyInputField: UITextField! {
         didSet {
             currencyInputField.delegate = self
         }
@@ -31,12 +34,15 @@ class ViewController: UIViewController, SendCountryNameDelegate, UITextFieldDele
     var isButtonClicked: Bool = false
     var isCountrySelected: Bool = false
     
-    var radioButtonGroup: IKRadioButtonGroup!
+    var selectedIndex:IndexPath?
+    
+    var ratesCollection: [Double] = [Double]()
     
     var rates: [Rate] = [Rate]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         ShowProgress.shared.showProgressHUD()
         
@@ -45,16 +51,12 @@ class ViewController: UIViewController, SendCountryNameDelegate, UITextFieldDele
             
             DispatchQueue.main.async {
                 self.setUpDropdownData()
+                self.view.bringSubviewToFront(self.dropDownMenu)
             }
         }
         
-        
-//        radioButtonGroup = IKRadioButtonGroup()
-//        radioButtonGroup.delegate = self
-//        radioButtonGroup.appendToRadioGroup(radioButtons: [standardBtn,superBtn, reduceBtn])
-        
         WrapperView.delegate = self
-        
+        radioBtnTableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "Cell")
         ShowProgress.shared.dismissProgressHUD()
     }
     
@@ -66,13 +68,18 @@ class ViewController: UIViewController, SendCountryNameDelegate, UITextFieldDele
     func showCountryName(name: String, selectedIndex: Int) {
         print("Selected Country is: \(name)")
         self.isCountrySelected = true
-        print("Selected Country's Standerd index is: \(self.rates[selectedIndex].periods[0].rates.standard)")
+//        print("Selected Country's Standerd index is: \(self.rates[selectedIndex].periods[0].rates.standard)")
+//        print("Selected Country's superReduced index is: \(self.rates[selectedIndex].periods[0].rates.superReduced)")
+//        print("Selected Country's reduced index is: \(self.rates[selectedIndex].periods[0].rates.reduced)")
         var periods = self.rates[selectedIndex].periods
-        for i in 0..<periods.count {
-            print("standerd (\(periods[i].rates.standard)%)")
-            print("super_reduced (\(periods[i].rates.superReduced)%)")
-            print("reduced (\(periods[i].rates.reduced)%)")
+        
+        self.amalgam(standard: periods[0].rates.standard, superReduced: periods[0].rates.superReduced, reduced: periods[0].rates.reduced)
+        self.selectedIndex = nil
+        DispatchQueue.main.async {
+            self.radioBtnTableView.reloadData()
         }
+        
+        
         
     }
     
@@ -80,7 +87,61 @@ class ViewController: UIViewController, SendCountryNameDelegate, UITextFieldDele
         print("End Editing")
         self.originalAmount.text = textField.text
     }
-
     
+    
+    //MARK:- delegates
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if ratesCollection.isEmpty {
+            return 1
+        } else {
+            return ratesCollection.count
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomCell
+        
+        cell.selectionStyle = .none
+        
+        if self.ratesCollection.isEmpty {
+            cell.taxrateLabel.text = "Default 10.0%"
+            if (selectedIndex == indexPath) {
+                cell.radioBtnIcon.image = UIImage(named: "checked")
+            } else {
+                cell.radioBtnIcon.image = UIImage(named: "unchecked")
+            }
+        } else {
+            cell.taxrateLabel.text = "\(self.ratesCollection[indexPath.row])%"
+            if (selectedIndex == indexPath) {
+                cell.radioBtnIcon.image = UIImage(named: "checked")
+            } else {
+                cell.radioBtnIcon.image = UIImage(named: "unchecked")
+            }
+        }
+        
+        
+        
+        return cell
+    }
+
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath
+        tableView.reloadData()
+        
+        self.taxAmount.text = "\(TaxCalculator.shared.tax(originalAmount: self.originalAmount.text!, rate: Int(self.ratesCollection[indexPath.row])))"
+        self.totalAmount.text = TaxCalculator.shared.calculateTotal(originalAmount: self.originalAmount.text, taxAmount: self.taxAmount.text)
+    }
+    
+    func amalgam(standard: Double? = 0.0, superReduced: Double? = 0.0, reduced: Double? = 0.0 ) {
+        
+        if !ratesCollection.isEmpty {
+            ratesCollection.removeAll()
+        }
+        self.ratesCollection.append(standard ?? 0.0)
+        self.ratesCollection.append(superReduced ?? 0.0)
+        self.ratesCollection.append(reduced ?? 0.0)
+    }
 }
 

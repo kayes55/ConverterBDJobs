@@ -18,17 +18,8 @@ class TaxCalculator {
     
     func tax(originalAmount: String, rate: Int) -> String {
         guard let temp = Double(originalAmount) else {return ""}
+        return String((temp/100.00)*Double(rate))
         
-        switch rate {
-        case 1:
-            return String((temp/100.00)*21)
-        case 2:
-            return String((temp/100.00)*4)
-        case 3:
-            return String((temp/100.00)*10)
-        default:
-            return ""
-        }
     }
     
     func calculateTotal(originalAmount: String?, taxAmount: String?) -> String? {
