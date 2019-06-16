@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, SendCountryNameDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
 
     @IBOutlet weak var radioBtnTableView: UITableView!
     @IBOutlet weak var currencyInputField: UITextField! {
@@ -28,8 +28,6 @@ class ViewController: UIViewController, SendCountryNameDelegate, UITextFieldDele
     @IBOutlet weak var originalAmount: UILabel!
     @IBOutlet weak var taxAmount: UILabel!
     @IBOutlet weak var totalAmount: UILabel!
-    
-    var isCountrySelected: Bool = false
     
     var selectedIndex:IndexPath?
     
@@ -65,90 +63,8 @@ class ViewController: UIViewController, SendCountryNameDelegate, UITextFieldDele
         dropDownMenu.optionArray = self.rates
     }
     
-    func showCountryName(name: String, selectedIndex: Int) {
-        print("Selected Country is: \(name)")
-        self.isCountrySelected = true
-
-        var periods = self.rates[selectedIndex].periods
-        
-        self.amalgam(standard: periods[0].rates.standard, superReduced: periods[0].rates.superReduced, reduced: periods[0].rates.reduced)
-        self.selectedIndex = nil
-        DispatchQueue.main.async {
-            self.radioBtnTableView.reloadData()
-        }
-        
-        
-        
-    }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        print("End Editing")
-        self.originalAmount.text = textField.text
-    }
-    
-    
-    //MARK:- delegates
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if ratesCollection.isEmpty {
-            return defaultRates.count
-        } else {
-            return ratesCollection.count
-        }
-        
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomCell
-        
-        cell.selectionStyle = .none
-        
-        if self.ratesCollection.isEmpty {
-            cell.taxrateLabel.text = "\(self.defaultTexts[indexPath.row]) \(self.defaultRates[indexPath.row])%"
-            if (selectedIndex == indexPath) {
-                cell.radioBtnIcon.image = UIImage(named: "checked")
-            } else {
-                cell.radioBtnIcon.image = UIImage(named: "unchecked")
-            }
-        } else {
-            cell.taxrateLabel.text = "\(self.defaultTexts[indexPath.row]) \(self.ratesCollection[indexPath.row])%"
-            if (selectedIndex == indexPath) {
-                cell.radioBtnIcon.image = UIImage(named: "checked")
-            } else {
-                cell.radioBtnIcon.image = UIImage(named: "unchecked")
-            }
-        }
-        
-        
-        
-        return cell
-    }
-
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        if currencyInputField.text!.isEmpty {
-            AlertManager.shared.showAlert(title: "Warning!", message: "Currency Field cannot be empty", vc: self)
-        } else {
-            selectedIndex = indexPath
-            tableView.reloadData()
-            
-            if self.ratesCollection.isEmpty {
-                self.taxAmount.text = "\(TaxCalculator.shared.tax(originalAmount: self.originalAmount.text!, rate: self.defaultRates[indexPath.row]))"
-                self.totalAmount.text = TaxCalculator.shared.calculateTotal(originalAmount: self.originalAmount.text, taxAmount: self.taxAmount.text)
-            } else {
-                self.taxAmount.text = "\(TaxCalculator.shared.tax(originalAmount: self.originalAmount.text!, rate: self.ratesCollection[indexPath.row]))"
-                self.totalAmount.text = TaxCalculator.shared.calculateTotal(originalAmount: self.originalAmount.text, taxAmount: self.taxAmount.text)
-            }
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        let sectionName: String = "Vat Rates:"
-        return sectionName
-    }
-    
-    func amalgam(standard: Double? = 0.0, superReduced: Double? = 0.0, reduced: Double? = 0.0 ) {
+    func storeData(standard: Double? = 0.0, superReduced: Double? = 0.0, reduced: Double? = 0.0 ) {
         
         if !ratesCollection.isEmpty {
             ratesCollection.removeAll()
