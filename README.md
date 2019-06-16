@@ -14,3 +14,6 @@ Clone master branch for latest commits.
 ## Built With
 
 * [vat-rates](https://github.com/adamcooke/vat-rates) - API used
+
+## Here is App's Walkthrough
+![](app.gif)
