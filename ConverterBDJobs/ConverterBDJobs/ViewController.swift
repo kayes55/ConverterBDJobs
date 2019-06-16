@@ -22,6 +22,7 @@ class ViewController: UIViewController, SendCountryNameDelegate, UITextFieldDele
     @IBOutlet weak var countryNameLbl: UILabel! {
         didSet {
             countryNameLbl.textColor = UIColor.black
+            countryNameLbl.text = "Spain"
         }
     }
     @IBOutlet weak var originalAmount: UILabel!

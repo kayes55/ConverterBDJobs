@@ -27,7 +27,7 @@ class WrapperView: UIView {
     var table : UITableView!
     var shadow : UIView!
     
-    public  var selectedIndex: Int?
+    public  var selectedIndex: Int? = 0
     
     @IBInspectable public var rowHeight: CGFloat = 30
     @IBInspectable public var rowBackgroundColor: UIColor = .white
