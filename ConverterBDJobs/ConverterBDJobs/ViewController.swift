@@ -127,7 +127,7 @@ class ViewController: UIViewController, SendCountryNameDelegate, UITextFieldDele
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         if currencyInputField.text!.isEmpty {
-            AlertManager.shared.showAlert(title: "Warning!", message: "TextField Cannot be empty", vc: self)
+            AlertManager.shared.showAlert(title: "Warning!", message: "Currency Field cannot be empty", vc: self)
         } else {
             selectedIndex = indexPath
             tableView.reloadData()
