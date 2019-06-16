@@ -11,6 +11,9 @@
 		E53FA18722B5889C006EE9D4 /* ShowProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53FA18622B5889C006EE9D4 /* ShowProgress.swift */; };
 		E53FA18B22B5B12E006EE9D4 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53FA18922B5B12E006EE9D4 /* CustomCell.swift */; };
 		E53FA18C22B5B12E006EE9D4 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E53FA18A22B5B12E006EE9D4 /* CustomCell.xib */; };
+		E53FA18E22B5D8D3006EE9D4 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53FA18D22B5D8D3006EE9D4 /* Rate.swift */; };
+		E53FA19022B5D8F5006EE9D4 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53FA18F22B5D8F5006EE9D4 /* Period.swift */; };
+		E53FA19222B5D925006EE9D4 /* Rates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53FA19122B5D925006EE9D4 /* Rates.swift */; };
 		E55058C722B2FF9F005E616F /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058C622B2FF9F005E616F /* Arrow.swift */; };
 		E55058C922B3004A005E616F /* WrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058C822B3004A005E616F /* WrapperView.swift */; };
 		E55058D122B321C8005E616F /* TaxCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55058D022B321C8005E616F /* TaxCalculator.swift */; };
@@ -30,6 +33,9 @@
 		E53FA18622B5889C006EE9D4 /* ShowProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProgress.swift; sourceTree = "<group>"; };
 		E53FA18922B5B12E006EE9D4 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		E53FA18A22B5B12E006EE9D4 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		E53FA18D22B5D8D3006EE9D4 /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
+		E53FA18F22B5D8F5006EE9D4 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
+		E53FA19122B5D925006EE9D4 /* Rates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rates.swift; sourceTree = "<group>"; };
 		E55058C622B2FF9F005E616F /* Arrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		E55058C822B3004A005E616F /* WrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperView.swift; sourceTree = "<group>"; };
 		E55058D022B321C8005E616F /* TaxCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxCalculator.swift; sourceTree = "<group>"; };
@@ -104,6 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				E55058D522B333FC005E616F /* Tax.swift */,
+				E53FA18D22B5D8D3006EE9D4 /* Rate.swift */,
+				E53FA18F22B5D8F5006EE9D4 /* Period.swift */,
+				E53FA19122B5D925006EE9D4 /* Rates.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -276,8 +285,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E53FA18B22B5B12E006EE9D4 /* CustomCell.swift in Sources */,
+				E53FA19222B5D925006EE9D4 /* Rates.swift in Sources */,
+				E53FA19022B5D8F5006EE9D4 /* Period.swift in Sources */,
 				E5D8C6D022B2AC450027EE83 /* ViewController.swift in Sources */,
 				E55058D622B333FC005E616F /* Tax.swift in Sources */,
+				E53FA18E22B5D8D3006EE9D4 /* Rate.swift in Sources */,
 				E55058D122B321C8005E616F /* TaxCalculator.swift in Sources */,
 				E5D8C6CE22B2AC450027EE83 /* AppDelegate.swift in Sources */,
 				E55058C722B2FF9F005E616F /* Arrow.swift in Sources */,
